@@ -1,1 +1,4 @@
 src/PeopleSearch.Data/obj/*
+src/PeopleSearch.Data.Tests/obj/*
+src/packages/
+src/PeopleSearch.Data/bin/*
