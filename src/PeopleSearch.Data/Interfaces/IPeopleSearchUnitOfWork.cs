@@ -1,11 +1,12 @@
-﻿using PeopleSearch.Data.Repositories;
+﻿using System;
+using PeopleSearch.Data.Repositories;
 
 namespace PeopleSearch.Data.Interfaces
 {
     /// <summary>
     /// Interface for the PeopleSearch Unit of Work
     /// </summary>
-    public interface IPeopleSearchUnitOfWork
+    public interface IPeopleSearchUnitOfWork:IDisposable
     {
         /// <summary>
         /// Repository for the Person Entity

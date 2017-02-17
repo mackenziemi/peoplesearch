@@ -1,4 +1,6 @@
-﻿using PeopleSearch.Data.Interfaces;
+﻿using System;
+using System.Data.Entity;
+using PeopleSearch.Data.Interfaces;
 using PeopleSearch.Data.Repositories;
 
 namespace PeopleSearch.Data
@@ -20,6 +22,8 @@ namespace PeopleSearch.Data
             } 
         }
 
+        
+
         #endregion
 
         #region Methods
@@ -29,6 +33,11 @@ namespace PeopleSearch.Data
             throw new System.NotImplementedException();
         }
 
+
+        public void Dispose()
+        {
+            _peopleRepository.Dispose();
+        }
         #endregion
     }
 }
