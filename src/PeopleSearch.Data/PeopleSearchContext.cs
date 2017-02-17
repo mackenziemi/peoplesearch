@@ -1,5 +1,6 @@
 ﻿using PeopleSearch.Data.Interfaces;
 using System.Data.Entity;
+using PeopleSearch.Data.Entities;
 
 namespace PeopleSearch.Data
 {
@@ -7,14 +8,14 @@ namespace PeopleSearch.Data
     {
         #region Properties/Members
 
-        public DbSet<IPerson> People { get; set; }
+        public DbSet<PersonEntity> People { get; set; }
 
         #endregion
 
         #region Constructors
 
         public PeopleSearchContext()
-            : base("dbconnection")
+            : base("name=dbconnection")
         {
             
         }

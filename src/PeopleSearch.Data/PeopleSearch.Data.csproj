@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="Entities\PersonEntity.cs" />
     <Compile Include="Interfaces\IPeopleSearchUnitOfWork.cs" />
-    <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="PeopleSearchContext.cs" />
     <Compile Include="PeopleSearchDbInitializer.cs" />

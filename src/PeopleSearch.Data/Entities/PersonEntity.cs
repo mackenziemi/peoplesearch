@@ -7,7 +7,8 @@ namespace PeopleSearch.Data.Entities
     /// <summary>
     /// Person Entity
     /// </summary>
-    public class PersonEntity:IPerson
+    [Table("People")]
+    public class PersonEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
