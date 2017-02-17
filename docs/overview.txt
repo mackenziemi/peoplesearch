@@ -1,0 +1,7 @@
+In this application, I will endeavor to show my development skills and philosophy. I am a big fan of patterns and practices and I will do my best to adhere to:
+
+SOLID
+TDD
+Repository Pattern
+Unit of Work Patten
+N-Tier application design

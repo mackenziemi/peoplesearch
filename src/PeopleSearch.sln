@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Data Access", "1 - Data Access", "{3542665E-6589-4F1F-92D1-D25FF6690442}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Service Layer", "2 - Service Layer", "{516170B9-2F61-45BF-97D7-272C536FBFCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - User Interface", "3 - User Interface", "{30E765A2-5343-4B83-97EA-8C0705FD15D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleSearch.Data", "PeopleSearch.Data\PeopleSearch.Data.csproj", "{586DF619-E3B5-44F5-9448-CA637D8D7A95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{586DF619-E3B5-44F5-9448-CA637D8D7A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{586DF619-E3B5-44F5-9448-CA637D8D7A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{586DF619-E3B5-44F5-9448-CA637D8D7A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{586DF619-E3B5-44F5-9448-CA637D8D7A95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{586DF619-E3B5-44F5-9448-CA637D8D7A95} = {3542665E-6589-4F1F-92D1-D25FF6690442}
+	EndGlobalSection
+EndGlobal
