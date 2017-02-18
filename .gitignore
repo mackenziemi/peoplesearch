@@ -3,3 +3,4 @@ src/PeopleSearch.Data.Tests/obj/*
 src/packages/
 src/PeopleSearch.Data/bin/*
 src/PeopleSearch.Data.Tests/bin/*
+src/.vs/PeopleSearch/v14/.suo

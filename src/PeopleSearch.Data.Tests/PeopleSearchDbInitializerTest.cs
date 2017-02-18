@@ -16,7 +16,6 @@ namespace PeopleSearch.Data.Tests
 
         #endregion
 
-
         #region Setup & TearDown
 
         [OneTimeSetUp]

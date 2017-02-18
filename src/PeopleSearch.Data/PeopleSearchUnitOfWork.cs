@@ -9,34 +9,50 @@ namespace PeopleSearch.Data
     {
         #region Properties/Members
 
-        private PeopleRepository _peopleRepository;
+        private PeopleSearchContext Context;
+
+
+        private PeopleRepository peopleRepository;
         public PeopleRepository PeopleRepository
         {
             get
             {
-                if (_peopleRepository == null)
+                if (peopleRepository == null)
                 {
-                    this._peopleRepository=new PeopleRepository();
+                    this.peopleRepository=new PeopleRepository(Context);
                 }
-                return _peopleRepository;
+                return peopleRepository;
             } 
         }
 
-        
+        #endregion
+
+        #region Constructors
+
+        public PeopleSearchUnitOfWork()
+        {
+            Context = new PeopleSearchContext();
+        }
+
+        public PeopleSearchUnitOfWork(PeopleSearchContext context)
+        {
+            this.Context = context;
+        }
 
         #endregion
+
 
         #region Methods
 
         public void Save()
         {
-            throw new System.NotImplementedException();
+            Context.SaveChanges();
         }
 
 
         public void Dispose()
         {
-            _peopleRepository.Dispose();
+            peopleRepository.Dispose();
         }
         #endregion
     }

@@ -15,10 +15,10 @@ namespace PeopleSearch.Data.Repositories
         #region Properites/Members
 
         protected DbContext Context;
-        private DbSet<TEntity> _dbSet;
+        private DbSet<TEntity> dbSet;
 
 
-        public int Count => _dbSet.Count();
+        public int Count => dbSet.Count();
 
         #endregion
 
@@ -28,13 +28,13 @@ namespace PeopleSearch.Data.Repositories
         public Repository()
         {
             Context =new PeopleSearchContext();
-            _dbSet = Context.Set<TEntity>();
+            dbSet = Context.Set<TEntity>();
         }
 
         public Repository(DbContext context)
         {
             Context = context;
-            _dbSet = Context.Set<TEntity>();
+            dbSet = Context.Set<TEntity>();
         }
 
         #endregion
@@ -42,12 +42,12 @@ namespace PeopleSearch.Data.Repositories
 
         public void Create(TEntity t)
         {
-            _dbSet.Add(t);
+            dbSet.Add(t);
         }
 
         public void Delete(TEntity t)
         {
-            _dbSet.Remove(t);
+            dbSet.Remove(t);
         }
 
         public void Dispose()
@@ -57,12 +57,12 @@ namespace PeopleSearch.Data.Repositories
 
         public IQueryable<TEntity> Filter(Expression<Func<TEntity, bool>> predicate)
         {
-            return _dbSet.Where(predicate).AsQueryable();
+            return dbSet.Where(predicate).AsQueryable();
         }
 
         public TEntity FindById(object key)
         {
-            return _dbSet.Find(key);
+            return dbSet.Find(key);
         }
 
         public IQueryable<TEntity> GetAll()

@@ -1,4 +1,5 @@
-﻿using PeopleSearch.Data.Entities;
+﻿using System.Data.Entity;
+using PeopleSearch.Data.Entities;
 
 namespace PeopleSearch.Data.Repositories
 {
@@ -8,6 +9,11 @@ namespace PeopleSearch.Data.Repositories
             :base()
         {
             
+        }
+
+        public PeopleRepository(DbContext context)
+            :base(context)
+        {
         }
     }
 }
