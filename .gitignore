@@ -4,3 +4,7 @@ src/packages/
 src/PeopleSearch.Data/bin/*
 src/PeopleSearch.Data.Tests/bin/*
 src/.vs/PeopleSearch/v14/.suo
+src/PeopleSearch.Logic/obj/*
+src/PeopleSearch.Logic/bin/*
+src/PeopleSearch.API/bin/*
+src/PeopleSearch.API/obj/*

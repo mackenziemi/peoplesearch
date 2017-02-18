@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using PeopleSearch.Data;
 using PeopleSearch.Data.Entities;
+using PeopleSearch.Data.Factories;
+using PeopleSearch.Data.Interfaces;
 
 namespace PeopleSearch.Data.Tests
 {
@@ -31,7 +33,8 @@ namespace PeopleSearch.Data.Tests
         public void FixtureSetup()
         {
             // Initialize the objects
-            dbContext = new PeopleSearchContext();
+            IDbContextFactory<PeopleSearchContext> contextFactory = new PeopleSearchContextFactory();
+            dbContext = contextFactory.NewDbContext();
             unitOfWork = new PeopleSearchUnitOfWork(dbContext);
             dbInitializer = new PeopleSearchDbInitializer();
 

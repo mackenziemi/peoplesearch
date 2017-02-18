@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using PeopleSearch.Data.Entities;
 using PeopleSearch.Data.Interfaces;
 using PeopleSearch.Data.Repositories;
 
@@ -12,14 +13,14 @@ namespace PeopleSearch.Data
         private PeopleSearchContext Context;
 
 
-        private PeopleRepository peopleRepository;
-        public PeopleRepository PeopleRepository
+        private GenericRepository<PersonEntity> peopleRepository;
+        public GenericRepository<PersonEntity> PeopleRepository
         {
             get
             {
                 if (peopleRepository == null)
                 {
-                    this.peopleRepository=new PeopleRepository(Context);
+                    this.peopleRepository=new GenericRepository<PersonEntity>(Context);
                 }
                 return peopleRepository;
             } 
@@ -54,6 +55,7 @@ namespace PeopleSearch.Data
         {
             peopleRepository.Dispose();
         }
+
         #endregion
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using PeopleSearch.Data.Entities;
 using PeopleSearch.Data.Repositories;
 
 namespace PeopleSearch.Data.Interfaces
@@ -9,9 +10,9 @@ namespace PeopleSearch.Data.Interfaces
     public interface IPeopleSearchUnitOfWork:IDisposable
     {
         /// <summary>
-        /// Repository for the Person Entity
+        /// GenericRepository for the Person Entity
         /// </summary>
-       PeopleRepository PeopleRepository { get; }
+       GenericRepository<PersonEntity> PeopleRepository { get; }
 
         /// <summary>
         /// Saves/Updates the database

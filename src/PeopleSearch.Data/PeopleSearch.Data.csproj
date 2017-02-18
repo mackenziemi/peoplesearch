@@ -50,14 +50,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\PersonEntity.cs" />
+    <Compile Include="Factories\PeopleSearchContextFactory.cs" />
+    <Compile Include="Interfaces\IDbContextFactory.cs" />
     <Compile Include="Interfaces\IPeopleSearchUnitOfWork.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="PeopleSearchContext.cs" />
     <Compile Include="PeopleSearchDbInitializer.cs" />
     <Compile Include="PeopleSearchUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\PeopleRepository.cs" />
-    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

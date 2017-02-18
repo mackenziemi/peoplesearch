@@ -9,7 +9,7 @@ namespace PeopleSearch.Data.Repositories
     /// <summary>
     /// Abstract Parent Class for all Repositories
     /// </summary>
-    public class Repository<TEntity> : IRepository<TEntity>
+    public class GenericRepository<TEntity> : IRepository<TEntity>
         where TEntity: class
     {
         #region Properites/Members
@@ -22,23 +22,15 @@ namespace PeopleSearch.Data.Repositories
 
         #endregion
 
-
         #region Constructors
 
-        public Repository()
-        {
-            Context =new PeopleSearchContext();
-            dbSet = Context.Set<TEntity>();
-        }
-
-        public Repository(DbContext context)
+        public GenericRepository(DbContext context)
         {
             Context = context;
             dbSet = Context.Set<TEntity>();
         }
 
         #endregion
-
 
         public void Create(TEntity t)
         {
@@ -73,6 +65,11 @@ namespace PeopleSearch.Data.Repositories
         public void Update(TEntity t)
         {
             Context.Entry(t).State = System.Data.Entity.EntityState.Modified;
+        }
+
+        public void SaveChanges()
+        {
+            Context.SaveChanges();
         }
     }
 }

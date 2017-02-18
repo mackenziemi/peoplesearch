@@ -56,5 +56,10 @@ namespace PeopleSearch.Data.Interfaces
         /// The number of objects in the repository
         /// </summary>
         int Count { get; }
+
+        /// <summary>
+        /// Save changes
+        /// </summary>
+        void SaveChanges();
     }
 }
