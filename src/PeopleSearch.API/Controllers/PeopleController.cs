@@ -1,18 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Microsoft.Practices.Unity;
+using PeopleSearch.Data;
+using PeopleSearch.Data.Factories;
+using PeopleSearch.Logic.Interfaces;
+using PeopleSearch.Logic.Models;
+using PeopleSearch.Logic.Services;
+using PeopleSearch.Data.Interfaces;
 
 namespace PeopleSearch.API.Controllers
 {
     public class PeopleController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        #region Properties/Members 
+
+        private UnityContainer unityContainer;
+        private ICrudService<PersonModel> service;
+
+        #endregion
+
+        #region Constructors
+
+        public PeopleController()
         {
-            return new string[] { "value1", "value2" };
+            unityContainer = new UnityContainer();
+
+            unityContainer.RegisterType<IDbContextFactory<DbContext>, PeopleSearchContextFactory>();
+            unityContainer.RegisterType<ICrudService<PersonModel>, PeopleService>();
+
+            service = unityContainer.Resolve<ICrudService<PersonModel>>();
+        }
+
+        #endregion
+
+        // GET api/<controller>
+        public IEnumerable<PersonModel> Get()
+        {
+            return service.GetAll().AsEnumerable();
         }
 
         // GET api/<controller>/5
