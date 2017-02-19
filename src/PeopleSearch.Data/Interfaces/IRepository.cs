@@ -43,14 +43,14 @@ namespace PeopleSearch.Data.Interfaces
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
-        void Update(T t);
+        void Update(T t, int key);
 
         /// <summary>
         /// Deletes an object from the repository
         /// </summary>
         /// <param name="t">the object to delete</param>
         /// <returns></returns>
-        void Delete(T t);
+        void Delete(int key);
 
         /// <summary>
         /// The number of objects in the repository

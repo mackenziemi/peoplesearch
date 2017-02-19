@@ -8,3 +8,5 @@ src/PeopleSearch.Logic/obj/*
 src/PeopleSearch.Logic/bin/*
 src/PeopleSearch.API/bin/*
 src/PeopleSearch.API/obj/*
+src/PeopleSearch.Logic.Tests/obj/*
+src/PeopleSearch.Logic.Tests/bin/*

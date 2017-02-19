@@ -1,4 +1,10 @@
-﻿using PeopleSearch.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Linq.Expressions;
+using AutoMapper;
+using PeopleSearch.Data;
 using PeopleSearch.Data.Interfaces;
 using PeopleSearch.Logic.Interfaces;
 
@@ -6,7 +12,9 @@ namespace PeopleSearch.Logic.Services
 {
     public abstract class CrudService<T>: ICrudService<T>
     {
-        #region Properties/Membersd
+        #region Properties/Members
+
+        protected IDbContextFactory<DbContext> ContextFactory { get; private set; }
 
         protected IPeopleSearchUnitOfWork UnitOfWork;
 
@@ -14,9 +22,11 @@ namespace PeopleSearch.Logic.Services
 
         #region Constructors
 
-        protected CrudService()
+        protected CrudService(IDbContextFactory<DbContext> factory)
         {
-            UnitOfWork = new PeopleSearchUnitOfWork();
+            ContextFactory = factory;
+
+            UnitOfWork = new PeopleSearchUnitOfWork((PeopleSearchContext)ContextFactory.NewDbContext());
         }
 
         #endregion
@@ -31,6 +41,10 @@ namespace PeopleSearch.Logic.Services
         public abstract void UpdateModel(T model);
 
         public abstract void DeleteModel(T model);
+
+        public abstract IList<T> GetAll();
+
+        //public abstract IQueryable<T> FilterModels(Expression<Func<T, bool>> predicate);
 
         #endregion
 

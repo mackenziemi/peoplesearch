@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleSearch.API", "PeopleS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleSearch.Logic", "PeopleSearch.Logic\PeopleSearch.Logic.csproj", "{870D23A7-89D9-4631-B91A-3882C0A2E4BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleSearch.Logic.Tests", "PeopleSearch.Logic.Tests\PeopleSearch.Logic.Tests.csproj", "{F36B1289-FA2A-46FB-BD32-A89B79D52319}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{870D23A7-89D9-4631-B91A-3882C0A2E4BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{870D23A7-89D9-4631-B91A-3882C0A2E4BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{870D23A7-89D9-4631-B91A-3882C0A2E4BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36B1289-FA2A-46FB-BD32-A89B79D52319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36B1289-FA2A-46FB-BD32-A89B79D52319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36B1289-FA2A-46FB-BD32-A89B79D52319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36B1289-FA2A-46FB-BD32-A89B79D52319}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +54,6 @@ Global
 		{22B17BE1-EEC2-41B8-B944-E79813ACC3F7} = {3542665E-6589-4F1F-92D1-D25FF6690442}
 		{21DF3E65-0CEC-46A8-ADD7-B5718A8A2371} = {516170B9-2F61-45BF-97D7-272C536FBFCA}
 		{870D23A7-89D9-4631-B91A-3882C0A2E4BF} = {516170B9-2F61-45BF-97D7-272C536FBFCA}
+		{F36B1289-FA2A-46FB-BD32-A89B79D52319} = {516170B9-2F61-45BF-97D7-272C536FBFCA}
 	EndGlobalSection
 EndGlobal

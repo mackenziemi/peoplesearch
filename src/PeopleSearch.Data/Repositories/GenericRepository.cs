@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
 using System.Linq.Expressions;
 using PeopleSearch.Data.Interfaces;
@@ -37,9 +38,12 @@ namespace PeopleSearch.Data.Repositories
             dbSet.Add(t);
         }
 
-        public void Delete(TEntity t)
+        public void Delete( int key)
         {
-            dbSet.Remove(t);
+            var existing = Context.Set<TEntity>().Find(key);
+            if (existing == null) return;
+            dbSet.Remove(existing);
+            SaveChanges();
         }
 
         public void Dispose()
@@ -62,9 +66,15 @@ namespace PeopleSearch.Data.Repositories
             return Context.Set<TEntity>().AsQueryable();
         }
 
-        public void Update(TEntity t)
+        public void Update(TEntity t, int key)
         {
-            Context.Entry(t).State = System.Data.Entity.EntityState.Modified;
+            if (t == null)
+                return;
+
+            var existing = Context.Set<TEntity>().Find(key);
+            if (existing == null) return;
+            Context.Entry(existing).CurrentValues.SetValues(t);
+            SaveChanges();
         }
 
         public void SaveChanges()

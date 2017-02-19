@@ -55,17 +55,14 @@ namespace PeopleSearch.Data.Tests
         #region Tests
 
         [Test]
-        public void PeopleRepositoryCRUDTest()
+        public void PeopleRepositoryCrudTest()
         {
-            //ARRANGE
+            // ARRANGE
             var person = new PersonEntity {FirstName = "Phil", LastName = "Collson"};
 
             // Create
             unitOfWork.PeopleRepository.Create(person);
             unitOfWork.Save();
-
-            //dbContext.Set<PersonEntity>().Add(person);
-            //dbContext.SaveChanges();
             Assert.That(unitOfWork.PeopleRepository.GetAll().Any(x=>x.FirstName=="Phil" && x.LastName=="Collson"));
 
             // Read
@@ -76,12 +73,12 @@ namespace PeopleSearch.Data.Tests
 
             // Update
             person.LastName = "Coulson";
-            unitOfWork.PeopleRepository.Update(person);
+            unitOfWork.PeopleRepository.Update(person, readPerson.Id);
             unitOfWork.Save();
             Assert.That(unitOfWork.PeopleRepository.GetAll().Any(x => x.FirstName == "Phil" && x.LastName == "Coulson"));
 
             // Delete
-            unitOfWork.PeopleRepository.Delete(person);
+            unitOfWork.PeopleRepository.Delete(person.Id);
             unitOfWork.Save();
             Assert.That(!unitOfWork.PeopleRepository.GetAll().Any(x => x.FirstName == "Phil" && x.LastName == "Coulson"));
         }
