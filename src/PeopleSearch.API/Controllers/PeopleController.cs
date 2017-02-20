@@ -40,8 +40,7 @@ namespace PeopleSearch.API.Controllers
         #endregion
 
         // GET api/<controller>
-        [System.Web.Http.HttpGet]
-        public IEnumerable<PersonModel> Get(string filter)
+        public IEnumerable<PersonModel> Get(string filter="")
         {
             if (!string.IsNullOrEmpty(filter))
             {
