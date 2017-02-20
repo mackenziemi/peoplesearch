@@ -5,6 +5,7 @@ namespace PeopleSearch.Logic.Interfaces
         , IUpdateModel<T>
         , IDeleteModel<T>
         , IGetAllModels<T>
+        , IContains<T>
     {
         
     }

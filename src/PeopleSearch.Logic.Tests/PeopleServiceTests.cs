@@ -65,5 +65,22 @@ namespace PeopleSearch.Logic.Tests
             Assert.IsNull(read3);
         }
 
+        [Test]
+        public void PeopleServiceContainsTest()
+        {
+            // ARRANGE
+            string searchText = "ar";
+
+            // ACT
+            var results = service.Contains(searchText);
+
+            // ASSERT
+
+            // Expecting at least Tony Start, Carol Danvers, and Clint Barton from the seed data
+            Assert.That(results.Count>=3);
+            Assert.That(results.Any(x=>x.FirstName=="Tony" && x.LastName=="Stark"));
+
+        }
+
     }
 }

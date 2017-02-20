@@ -4,13 +4,13 @@ using System.Linq;
 using AutoMapper;
 using PeopleSearch.Data.Entities;
 using PeopleSearch.Data.Interfaces;
+using PeopleSearch.Logic.Interfaces;
 using PeopleSearch.Logic.Models;
 
 namespace PeopleSearch.Logic.Services
 {
     public class PeopleService : CrudService<PersonModel>
     {
-
 
         #region Constructors
 
@@ -63,7 +63,16 @@ namespace PeopleSearch.Logic.Services
             return result;
         }
 
+        public override IList<PersonModel> Contains(string filter)
+        {
+            var results = new List<PersonModel>();
+            var data =
+                UnitOfWork.PeopleRepository.Filter(x => x.FirstName.Contains(filter) || x.LastName.Contains(filter));
+            data.ToList().ForEach(i => results.Add(Mapper.Map<PersonModel>(i)));
+            return results;
+        }
         #endregion
+
 
     }
 }

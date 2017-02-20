@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using PeopleSearch.Data;
 using PeopleSearch.Data.Factories;
@@ -39,30 +40,43 @@ namespace PeopleSearch.API.Controllers
         #endregion
 
         // GET api/<controller>
-        public IEnumerable<PersonModel> Get()
+        [System.Web.Http.HttpGet]
+        public IEnumerable<PersonModel> Get(string filter)
         {
-            return service.GetAll().AsEnumerable();
+            if (!string.IsNullOrEmpty(filter))
+            {
+                return service.Contains(filter).AsEnumerable();
+            }
+            else
+            {
+                return service.GetAll().AsEnumerable();
+            }
+            
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public PersonModel Get(int id)
         {
-            return "value";
+            return service.GetModelById(id);
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public ActionResult Post([FromBody]PersonModel value)
         {
+            service.InsertModel(value);
+            return new HttpStatusCodeResult(HttpStatusCode.OK);  // OK = 200
         }
 
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]string value)
         {
+            throw new NotImplementedException();
         }
 
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+            throw new NotImplementedException();
         }
     }
 }

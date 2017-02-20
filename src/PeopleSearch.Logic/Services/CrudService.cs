@@ -44,7 +44,7 @@ namespace PeopleSearch.Logic.Services
 
         public abstract IList<T> GetAll();
 
-        //public abstract IQueryable<T> FilterModels(Expression<Func<T, bool>> predicate);
+        public abstract IList<T> Contains(string filter);
 
         #endregion
 
