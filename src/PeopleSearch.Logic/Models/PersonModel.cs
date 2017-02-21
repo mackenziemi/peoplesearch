@@ -10,6 +10,17 @@ namespace PeopleSearch.Logic.Models
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
 
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string ZipCode { get; set; }
+
+        public int Age { get; set; } = 0;
+
+        public string Interests { get; set; }
+
+        public string PictureURI { get; set; }
+
         #endregion
 
         #region Constructors
