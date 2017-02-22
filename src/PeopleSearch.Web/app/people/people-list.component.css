@@ -1,9 +1,19 @@
 ﻿
 .profile_img {
-    width: 70px;
-    height: 100px;
+    width: 200px;
+    height: 230px;
 }
 
 .td_profile_img {
+    width: 200px;
+}
+
+.td_label {
     width: 80px;
+
+}
+
+.tr_people {
+    border: none;
+
 }

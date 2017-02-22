@@ -12,3 +12,4 @@ src/PeopleSearch.Logic.Tests/obj/*
 src/PeopleSearch.Logic.Tests/bin/*
 src/PeopleSearch.Web/node_modules/*
 src/PeopleSearch.Web/bin/*
+src/PeopleSearch.Web/app/people/people-list.component.template.html~RF5b1b372.TMP
