@@ -2,17 +2,18 @@
 const router_1 = require("@angular/router");
 const dashboard_component_1 = require("./dashboard/dashboard.component");
 const personalCabinet_component_1 = require("./personalCabinet/personalCabinet.component");
+const people_list_component_1 = require("./people/people-list.component");
 const appRoutes = [
     {
         path: '',
-        component: dashboard_component_1.Dashboard
+        component: people_list_component_1.PeopleListComponent
     },
     {
         path: 'personal',
         component: personalCabinet_component_1.PersonalCabinet
     },
     {
-        path: '**',
+        path: 'dashboard',
         component: dashboard_component_1.Dashboard
     }
 ];

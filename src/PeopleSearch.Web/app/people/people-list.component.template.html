@@ -1,0 +1,29 @@
+﻿<div class="panel panel-default">
+    <div class="panel-body">
+        <h3>People Search</h3>
+        
+        Here are your people
+
+        <ul class="list-group" *ngFor="let item of items" >
+            <li class="list-group-item">
+                <table class="table">
+                    <tr>
+                        <td class="td_profile_img">
+                            <img class="profile_img" src="{{item.PictureURI}}"/>
+                        </td>
+                        <td>
+                            <p>
+                                <b>Name:</b> {{item.FirstName}} {{item.LastName}}
+                            </p>
+                            <p>
+                                <b>Address:</b> {{item.Address}}
+                            </p>
+                            <p>{{item.City}} {{item.State}}, {{item.ZipCode}}</p>
+                        </td>
+                    </tr>
+                </table>
+                
+            </li>
+        </ul>
+    </div>
+</div>

@@ -7,16 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
+const http_1 = require("@angular/http");
+const forms_1 = require("@angular/forms");
 const app_component_1 = require("./app.component");
 const dashboard_component_1 = require("./dashboard/dashboard.component");
 const personalCabinet_component_1 = require("./personalCabinet/personalCabinet.component");
+const people_list_component_1 = require("./people/people-list.component");
+const people_service_1 = require("./shared/people.service");
 const app_routing_1 = require("./app.routing");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, app_routing_1.routing],
-        declarations: [app_component_1.AppComponent, dashboard_component_1.Dashboard, personalCabinet_component_1.PersonalCabinet],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
+        providers: [people_service_1.PeopleService],
+        declarations: [app_component_1.AppComponent, dashboard_component_1.Dashboard, personalCabinet_component_1.PersonalCabinet, people_list_component_1.PeopleListComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
