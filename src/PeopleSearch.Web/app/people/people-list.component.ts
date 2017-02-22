@@ -13,19 +13,29 @@ export class PeopleListComponent implements OnInit {
 
     items: Person[];
     errorMessage: string;
+    public filterText: string;
 
     constructor(private peopleService: PeopleService,
         private router: Router) { }
 
-    getPeople() {
+    getPeople(filter: string) {
 
-        this.peopleService.get("")
+        this.peopleService.get(filter)
             .subscribe(people => this.items = people,
             error => this.errorMessage = <any>error);
         console.log("Error Message: " + this.errorMessage);
     }
 
     ngOnInit() {
-        this.getPeople();
+        this.getPeople("");
     }
+
+    public onFilterChanged(newValue) :void {
+
+        this.filterText = newValue;
+        this.getPeople(newValue);
+        console.log("Filter is: " + this.filterText);
+
+    }
+
 }

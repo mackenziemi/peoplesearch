@@ -10,8 +10,6 @@ const platform_browser_1 = require("@angular/platform-browser");
 const http_1 = require("@angular/http");
 const forms_1 = require("@angular/forms");
 const app_component_1 = require("./app.component");
-const dashboard_component_1 = require("./dashboard/dashboard.component");
-const personalCabinet_component_1 = require("./personalCabinet/personalCabinet.component");
 const people_list_component_1 = require("./people/people-list.component");
 const people_service_1 = require("./shared/people.service");
 const app_routing_1 = require("./app.routing");
@@ -21,7 +19,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
         providers: [people_service_1.PeopleService],
-        declarations: [app_component_1.AppComponent, dashboard_component_1.Dashboard, personalCabinet_component_1.PersonalCabinet, people_list_component_1.PeopleListComponent],
+        declarations: [app_component_1.AppComponent, people_list_component_1.PeopleListComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

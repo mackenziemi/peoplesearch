@@ -16,13 +16,18 @@ let PeopleListComponent = class PeopleListComponent {
         this.peopleService = peopleService;
         this.router = router;
     }
-    getPeople() {
-        this.peopleService.get("")
+    getPeople(filter) {
+        this.peopleService.get(filter)
             .subscribe(people => this.items = people, error => this.errorMessage = error);
         console.log("Error Message: " + this.errorMessage);
     }
     ngOnInit() {
-        this.getPeople();
+        this.getPeople("");
+    }
+    onFilterChanged(newValue) {
+        this.filterText = newValue;
+        this.getPeople(newValue);
+        console.log("Filter is: " + this.filterText);
     }
 };
 PeopleListComponent = __decorate([

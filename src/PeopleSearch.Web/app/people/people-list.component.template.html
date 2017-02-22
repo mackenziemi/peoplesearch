@@ -2,7 +2,13 @@
     <div class="panel-body">
         <h3>People Search</h3>
         
-        Here are your people
+        <div class="form-group">
+            <label>Search For:</label>
+            <input #textbox class="form-control" type="text" [(ngModel)]="filterText" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="onFilterChanged(textbox.value)">Search</button>
+        </div>    
 
         <ul class="list-group" *ngFor="let item of items" >
             <li class="list-group-item">
