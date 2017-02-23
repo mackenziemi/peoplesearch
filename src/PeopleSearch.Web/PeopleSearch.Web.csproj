@@ -102,13 +102,11 @@
     <Content Include="app\app.component.template.html" />
     <Content Include="app\people\people-list.component.css" />
     <Content Include="app\people\people-list.component.template.html" />
-    <Content Include="app\personalCabinet\personalCabinet.component.template.html" />
     <Content Include="bootstrap.css" />
     <Content Include="bootstrap.min.css" />
     <Content Include="Index.html" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
-    <Content Include="app\dashboard\dashboard.component.template.html" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -138,11 +136,9 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.routing.ts" />
-    <TypeScriptCompile Include="app\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\people\people-list.component.ts" />
     <TypeScriptCompile Include="app\people\Person.ts" />
-    <TypeScriptCompile Include="app\personalCabinet\personalCabinet.component.ts" />
     <TypeScriptCompile Include="app\shared\people.service.ts" />
     <TypeScriptCompile Include="app\usefullLinksService\link.ts" />
     <TypeScriptCompile Include="app\usefullLinksService\usefullLink.service.ts" />
