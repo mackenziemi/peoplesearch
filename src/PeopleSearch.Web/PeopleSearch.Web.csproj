@@ -105,11 +105,15 @@
     <Content Include="bootstrap.css" />
     <Content Include="bootstrap.min.css" />
     <Content Include="Index.html" />
+    <Content Include="karma-test-shim.js" />
+    <Content Include="karma.conf.js" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="tsconfig.json" />
+    <Content Include="typings.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -140,8 +144,7 @@
     <TypeScriptCompile Include="app\people\people-list.component.ts" />
     <TypeScriptCompile Include="app\people\Person.ts" />
     <TypeScriptCompile Include="app\shared\people.service.ts" />
-    <TypeScriptCompile Include="app\usefullLinksService\link.ts" />
-    <TypeScriptCompile Include="app\usefullLinksService\usefullLink.service.ts" />
+    <TypeScriptCompile Include="app\tests\1st.spec.ts" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

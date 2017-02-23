@@ -1,6 +1,6 @@
 "use strict";
-class Person {
-    constructor(FirstName, LastName, Address, City, State, ZipCode, Age, Interests, PictureURI) {
+var Person = (function () {
+    function Person(FirstName, LastName, Address, City, State, ZipCode, Age, Interests, PictureURI) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Address = Address;
@@ -11,6 +11,7 @@ class Person {
         this.Interests = Interests;
         this.PictureURI = PictureURI;
     }
-}
+    return Person;
+}());
 exports.Person = Person;
 //# sourceMappingURL=person.js.map

@@ -8,37 +8,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const http_1 = require("@angular/http");
-const Observable_1 = require("rxjs/Observable");
-require("rxjs/add/operator/map");
-require("rxjs/add/operator/toPromise");
-let PeopleService = class PeopleService {
-    constructor(http) {
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
+require('rxjs/add/operator/map');
+require('rxjs/add/operator/toPromise');
+var PeopleService = (function () {
+    function PeopleService(http) {
         this.http = http;
         this.baseUrl = "http://localhost:35767/api/people/"; //web api URL
     }
-    get(filter) {
+    PeopleService.prototype.get = function (filter) {
         if (filter == null) {
             url = this.baseUrl;
             return this.http.get(url)
-                .map(response => response.json());
+                .map(function (response) { return response.json(); });
         }
         else {
             var url = this.baseUrl + "?filter=" + filter;
             return this.http.get(url)
-                .map(response => response.json());
+                .map(function (response) { return response.json(); });
         }
-    }
-    handleError(error) {
+    };
+    PeopleService.prototype.handleError = function (error) {
         // output error to the console
         console.error(error);
         return Observable_1.Observable.throw(error.json().error || "Server error");
-    }
-};
-PeopleService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], PeopleService);
+    };
+    PeopleService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], PeopleService);
+    return PeopleService;
+}());
 exports.PeopleService = PeopleService;
 //# sourceMappingURL=people.service.js.map

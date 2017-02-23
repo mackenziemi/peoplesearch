@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'test' ]
+2 info using npm@3.10.9
+3 info using node@v7.1.0
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info lifecycle myproject@1.4.2~pretest: myproject@1.4.2
+6 silly lifecycle myproject@1.4.2~pretest: no script for pretest, continuing
+7 info lifecycle myproject@1.4.2~test: myproject@1.4.2
+8 verbose lifecycle myproject@1.4.2~test: unsafe-perm in lifecycle true
+9 verbose lifecycle myproject@1.4.2~test: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\mackenzie.mickelsen\Dropbox (Personal)\Source\PeopleSearch\src\PeopleSearch.Web\node_modules\.bin;.\node_modules\.bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\NativeBinaries\x86;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Sennheiser\SoftphoneSDK\;C:\Program Files (x86)\Plantronics\Spokes3G\;C:\Program Files\MongoDB 2.6 Standard\bin\;C:\Program Files\nodejs\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files\Git\cmd;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\;C:\Program Files\TortoiseHg\;C:\Program Files\dotnet\;C:\Ruby23-x64\bin;C:\Users\mackenzie.mickelsen\.dnx\bin;C:\Users\mackenzie.mickelsen\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\mackenzie.mickelsen\AppData\Roaming\npm;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Web\External
+10 verbose lifecycle myproject@1.4.2~test: CWD: C:\Users\mackenzie.mickelsen\Dropbox (Personal)\Source\PeopleSearch\src\PeopleSearch.Web
+11 silly lifecycle myproject@1.4.2~test: Args: [ '/d /s /c',
+11 silly lifecycle   'tsc && concurrently "tsc -w" "karma start karma.conf.js"' ]
+12 silly lifecycle myproject@1.4.2~test: Returned: code: 3221225786  signal: null
+13 info lifecycle myproject@1.4.2~test: Failed to exec test script
+14 error Test failed.  See above for more details.
+15 verbose exit [ 1, true ]
+16 verbose stack Error: kill ENOSYS
+16 verbose stack     at exports._errnoException (util.js:1022:11)
+16 verbose stack     at process.kill (internal/process.js:173:13)
+16 verbose stack     at process.listener (C:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+16 verbose stack     at emitNone (events.js:91:20)
+16 verbose stack     at process.emit (events.js:185:7)
+16 verbose stack     at processEmit (C:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+16 verbose stack     at processEmit (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+16 verbose stack     at Signal.wrap.onsignal (internal/process.js:200:44)
+17 verbose cwd C:\Users\mackenzie.mickelsen\Dropbox (Personal)\Source\PeopleSearch\src\PeopleSearch.Web\app\tests
+18 error Windows_NT 10.0.14393
+19 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "test"
+20 error node v7.1.0
+21 error npm  v3.10.9
+22 error code ENOSYS
+23 error errno ENOSYS
+24 error syscall kill
+25 error kill ENOSYS
+26 error If you need help, you may report this error at:
+26 error     <https://github.com/npm/npm/issues>
+27 verbose exit [ 1, true ]
