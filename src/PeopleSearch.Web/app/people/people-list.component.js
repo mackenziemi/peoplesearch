@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var people_service_1 = require('../shared/people.service');
+var people_service_1 = require("../shared/people.service");
 var PeopleListComponent = (function () {
     function PeopleListComponent(peopleService, router) {
         this.peopleService = peopleService;
@@ -30,15 +30,16 @@ var PeopleListComponent = (function () {
         this.getPeople(newValue);
         console.log("Filter is: " + this.filterText);
     };
-    PeopleListComponent = __decorate([
-        core_1.Component({
-            selector: 'people-list',
-            templateUrl: 'app/people/people-list.component.template.html',
-            styleUrls: ['app/people/people-list.component.css']
-        }), 
-        __metadata('design:paramtypes', [people_service_1.PeopleService, router_1.Router])
-    ], PeopleListComponent);
     return PeopleListComponent;
 }());
+PeopleListComponent = __decorate([
+    core_1.Component({
+        selector: 'people-list',
+        templateUrl: 'app/people/people-list.component.template.html',
+        styleUrls: ['app/people/people-list.component.css']
+    }),
+    __metadata("design:paramtypes", [people_service_1.PeopleService,
+        router_1.Router])
+], PeopleListComponent);
 exports.PeopleListComponent = PeopleListComponent;
 //# sourceMappingURL=people-list.component.js.map

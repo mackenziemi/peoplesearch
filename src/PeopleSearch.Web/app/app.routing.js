@@ -1,6 +1,6 @@
 "use strict";
-var router_1 = require('@angular/router');
-var people_list_component_1 = require('./people/people-list.component');
+var router_1 = require("@angular/router");
+var people_list_component_1 = require("./people/people-list.component");
 var appRoutes = [
     {
         path: '',
