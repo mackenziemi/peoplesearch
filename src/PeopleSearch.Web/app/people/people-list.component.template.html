@@ -1,4 +1,5 @@
-﻿<div class="panel panel-default">
+﻿<!--<sjs-spinner [radius]="25" [lines]="15" [width]="8" [length]="15" [opacity]="0.1" [shadow]="true"></sjs-spinner>-->
+<div class="panel panel-default">
     <div class="panel-body">
         <h3>People Search</h3>
         
@@ -8,7 +9,8 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary" (click)="onFilterChanged(textbox.value)">Search</button>
-        </div>    
+            <button class="btn btn-primary" (click)="onSlowFilterChange(textbox.value)">Slow Search</button>
+        </div> 
 
         <ul class="list-group" *ngFor="let item of items" >
             <li class="list-group-item">

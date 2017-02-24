@@ -13,6 +13,8 @@ var app_component_1 = require("./app.component");
 var people_list_component_1 = require("./people/people-list.component");
 var people_service_1 = require("./shared/people.service");
 var app_routing_1 = require("./app.routing");
+var spinner_component_1 = require("./spinner/spinner.component");
+var spinner_service_1 = require("./shared/spinner.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,8 +23,8 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
-        providers: [people_service_1.PeopleService],
-        declarations: [app_component_1.AppComponent, people_list_component_1.PeopleListComponent],
+        providers: [people_service_1.PeopleService, spinner_service_1.SpinnerService],
+        declarations: [app_component_1.AppComponent, people_list_component_1.PeopleListComponent, spinner_component_1.SpinnerComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

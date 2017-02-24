@@ -11,10 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var people_service_1 = require("../shared/people.service");
+var spinner_service_1 = require("../shared/spinner.service");
 var PeopleListComponent = (function () {
-    function PeopleListComponent(peopleService, router) {
+    function PeopleListComponent(peopleService, router, spinnerService) {
         this.peopleService = peopleService;
         this.router = router;
+        this.spinnerService = spinnerService;
+        this.spinTimeout = 1;
     }
     PeopleListComponent.prototype.getPeople = function (filter) {
         var _this = this;
@@ -30,16 +33,28 @@ var PeopleListComponent = (function () {
         this.getPeople(newValue);
         console.log("Filter is: " + this.filterText);
     };
+    PeopleListComponent.prototype.onSlowFilterChange = function (newValue) {
+        var _this = this;
+        this.spinnerService.show();
+        setTimeout(function () {
+            _this.filterText = newValue;
+            _this.getPeople(newValue);
+            _this.spinnerService.hide();
+            console.log("Slow Filter is: " + _this.filterText);
+        }, 5000);
+    };
     return PeopleListComponent;
 }());
 PeopleListComponent = __decorate([
     core_1.Component({
         selector: 'people-list',
         templateUrl: 'app/people/people-list.component.template.html',
-        styleUrls: ['app/people/people-list.component.css']
+        styleUrls: ['app/people/people-list.component.css'],
+        encapsulation: core_1.ViewEncapsulation.None,
     }),
     __metadata("design:paramtypes", [people_service_1.PeopleService,
-        router_1.Router])
+        router_1.Router,
+        spinner_service_1.SpinnerService])
 ], PeopleListComponent);
 exports.PeopleListComponent = PeopleListComponent;
 //# sourceMappingURL=people-list.component.js.map
