@@ -102,7 +102,6 @@
     <Content Include="app\app.component.template.html" />
     <Content Include="app\people\people-list.component.css" />
     <Content Include="app\people\people-list.component.template.html" />
-    <Content Include="app\spinner\spinner.component.template.html" />
     <Content Include="bootstrap.css" />
     <Content Include="bootstrap.min.css" />
     <Content Include="Index.html" />
@@ -146,8 +145,6 @@
     <TypeScriptCompile Include="app\people\people-list.component.ts" />
     <TypeScriptCompile Include="app\people\Person.ts" />
     <TypeScriptCompile Include="app\shared\people.service.ts" />
-    <TypeScriptCompile Include="app\shared\spinner.service.ts" />
-    <TypeScriptCompile Include="app\spinner\spinner.component.ts" />
     <TypeScriptCompile Include="app\tests\1st.spec.ts" />
   </ItemGroup>
   <ItemGroup />

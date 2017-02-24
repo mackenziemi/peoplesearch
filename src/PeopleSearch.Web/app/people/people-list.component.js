@@ -11,12 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var people_service_1 = require("../shared/people.service");
-var spinner_service_1 = require("../shared/spinner.service");
+var ng2_slim_loading_bar_1 = require("ng2-slim-loading-bar");
 var PeopleListComponent = (function () {
-    function PeopleListComponent(peopleService, router, spinnerService) {
+    function PeopleListComponent(peopleService, router, slimLoadingBarService) {
         this.peopleService = peopleService;
         this.router = router;
-        this.spinnerService = spinnerService;
+        this.slimLoadingBarService = slimLoadingBarService;
         this.spinTimeout = 1;
     }
     PeopleListComponent.prototype.getPeople = function (filter) {
@@ -35,13 +35,28 @@ var PeopleListComponent = (function () {
     };
     PeopleListComponent.prototype.onSlowFilterChange = function (newValue) {
         var _this = this;
-        this.spinnerService.show();
+        this.startLoading();
         setTimeout(function () {
             _this.filterText = newValue;
             _this.getPeople(newValue);
-            _this.spinnerService.hide();
+            _this.stopLoading();
+            _this.resetLoading();
             console.log("Slow Filter is: " + _this.filterText);
         }, 5000);
+    };
+    PeopleListComponent.prototype.startLoading = function () {
+        this.slimLoadingBarService.start(function () {
+            console.log('Loading complete');
+        });
+    };
+    PeopleListComponent.prototype.stopLoading = function () {
+        this.slimLoadingBarService.stop();
+    };
+    PeopleListComponent.prototype.completeLoading = function () {
+        this.slimLoadingBarService.complete();
+    };
+    PeopleListComponent.prototype.resetLoading = function () {
+        this.slimLoadingBarService.reset();
     };
     return PeopleListComponent;
 }());
@@ -54,7 +69,7 @@ PeopleListComponent = __decorate([
     }),
     __metadata("design:paramtypes", [people_service_1.PeopleService,
         router_1.Router,
-        spinner_service_1.SpinnerService])
+        ng2_slim_loading_bar_1.SlimLoadingBarService])
 ], PeopleListComponent);
 exports.PeopleListComponent = PeopleListComponent;
 //# sourceMappingURL=people-list.component.js.map

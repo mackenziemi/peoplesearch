@@ -9,13 +9,13 @@ import { PeopleService } from "./shared/people.service";
 
 import { routing } from './app.routing';
 
-import { SpinnerComponent } from './spinner/spinner.component';
-import { SpinnerService } from './shared/spinner.service';
+import { SlimLoadingBarModule, SlimLoadingBarService } from 'ng2-slim-loading-bar';
+
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpModule, routing],
-    providers: [PeopleService, SpinnerService],
-    declarations: [AppComponent, PeopleListComponent, SpinnerComponent],
+    imports: [BrowserModule, FormsModule, HttpModule, routing, SlimLoadingBarModule.forRoot()],
+    providers: [PeopleService, SlimLoadingBarService],
+    declarations: [AppComponent, PeopleListComponent],
     bootstrap: [AppComponent]
 })
 

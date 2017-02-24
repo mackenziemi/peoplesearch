@@ -3,8 +3,7 @@ import { Router } from "@angular/router";
 import { Person } from '../people/person';
 import { PeopleService } from '../shared/people.service';
 
-import { SpinnerComponent } from '../spinner/spinner.component';
-import { SpinnerService } from '../shared/spinner.service';
+import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 
 @Component({
     selector: 'people-list',
@@ -21,7 +20,7 @@ export class PeopleListComponent implements OnInit {
 
     constructor(private peopleService: PeopleService,
         private router: Router,
-        private spinnerService: SpinnerService) { }
+        private slimLoadingBarService: SlimLoadingBarService) { }
 
     getPeople(filter: string) {
 
@@ -42,13 +41,32 @@ export class PeopleListComponent implements OnInit {
     }
 
     public onSlowFilterChange(newValue): void {
-        this.spinnerService.show();
+        this.startLoading();
         setTimeout(() => {
                 this.filterText = newValue;
                 this.getPeople(newValue);
-                this.spinnerService.hide();
+                this.stopLoading();
+                this.resetLoading();
                 console.log("Slow Filter is: " + this.filterText);
             },
             5000);
+    }
+
+    startLoading() {
+        this.slimLoadingBarService.start(() => {
+            console.log('Loading complete');
+        });
+    }
+
+    stopLoading() {
+        this.slimLoadingBarService.stop();
+    }
+
+    completeLoading() {
+        this.slimLoadingBarService.complete();
+    }
+
+    resetLoading() {
+        this.slimLoadingBarService.reset();
     }
 }
